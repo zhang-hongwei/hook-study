@@ -17,8 +17,10 @@ const AppList = props => {
       refreshDeps: [refresh],
       defaultPageSize: 10,
       form: props.form,
+      manual: false
     },
   );
+
 
   // useEffect(() => {
   //   run();
