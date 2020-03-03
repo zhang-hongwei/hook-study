@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button, Col, Form, Input, Row, Table, Select, ConfigProvider } from 'antd';
 import { WrappedFormUtils } from 'antd/lib/form/Form';
 import { useFormTable } from '@umijs/hooks';
-// import { PaginatedParams } from '@umijs/hooks/useFormTable/lib';
 import { formItemLayout } from './config';
 
 const { Option } = Select;
 
 const AppList = props => {
-  const { columns, requestData, tag = [], rowKey, searchFrom, refresh } = props;
+  const { columns, requestData, rowKey, searchFrom, refresh } = props;
   console.log(refresh);
   const { getFieldDecorator } = props.form;
   const [isSearch, setIsSearch] = useState(false);
@@ -34,6 +33,7 @@ const AppList = props => {
   return (
     <ConfigProvider renderEmpty={() => '暂时无数据'}>
       <div>
+        <div>refresh====在table组件中=> {refresh}</div>
         {searchFrom ? (
           <Form layout="inline">
             {searchFrom(props.form)}
